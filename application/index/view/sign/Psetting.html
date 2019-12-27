@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__STATIC__/index/css/indexTB.css">
+    <link rel="stylesheet" href="__STATIC__/index/css/setting.css">
+    <link rel="stylesheet" href="__STATIC__/index/css/signIn.css" type="text/css" />
+    <link rel="stylesheet" href="__STATIC__/index/fonts/font_1090203_vwb70lzetrn/iconfont.css" type="text/css" />
+    <title>个人设置</title>
+</head>
+
+<body>
+    <{include file="public/header"}>
+    <div id="center">
+
+        <div class="main">
+            <div class="content">
+                <div class="time">
+                    <canvas id="clock"></canvas>
+                </div>
+                <div class="c-bor"></div>
+                <div class="l-bor"></div>
+                <div class="r-bor"></div>
+                <div class="t-bor"></div>
+
+                <div class="button">
+                    <{if condition = "$status == 1"}>
+                    <span>退签</span>
+                    <{else}>
+                    <span>签到</span>
+                    <{/if}>
+                </div>
+
+                <div class="week">
+                    <div class="wtime">
+                        <{$weekalltime|changeDate}>秒
+                    </div>
+                    <p>本周共累计</p>
+                </div>
+
+                <div class="day">
+                    <div class="dtime">
+                        <{$nowdatetime|changeDate}>秒
+                    </div>
+                    <p>本日共累计</p>
+                </div>
+
+
+
+                <ul class="sin-all">
+                    <{for start="1" end="8"}>
+                    <{$i|delSign}>
+                    <li>
+                        <h6><{$i|changeWeek}></h6>
+                        <{foreach $weektime as $vo}>
+                        <{if condition="$vo['week'] == $i"}>
+                        <p>本日共累计</p>
+                        <p><{$vo['time']|changeTimeType}></p>
+                        <{$vo['week']|setSign}>
+                        <{/if}>
+                        <{/foreach}>
+                        <{if condition="!ifSign()"}>
+                        <p class="nosin">未签到</p>
+                        <{/if}>
+                    </li>
+                    <{/for}>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <{include file="public/footer"}>
+
+</body>
+
+<script src="__STATIC__/index/js/scroll.js"></script>
+<script type="text/javascript " src="__STATIC__/index/js/setting.js"></script>
+<script type="text/javascript" src="__STATIC__/index/js/login.js"></script>
+<script src="__STATIC__/index/js/downblock.js"> </script>
+</html>

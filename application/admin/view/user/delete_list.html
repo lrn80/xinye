@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html><head>
+	    <meta charset="utf-8">
+    <title>童老师ThinkPHP交流群：484519446</title>
+
+    <meta name="description" content="Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Basic Styles-->
+    <link href="__ADMIN__/style/bootstrap.css" rel="stylesheet">
+    <link href="__ADMIN__/style/font-awesome.css" rel="stylesheet">
+    <link href="__ADMIN__/style/weather-icons.css" rel="stylesheet">
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="__ADMIN__/style/beyond.css" rel="stylesheet" type="text/css">
+    <link href="__ADMIN__/style/demo.css" rel="stylesheet">
+    <link href="__ADMIN__/style/typicons.css" rel="stylesheet">
+    <link href="__ADMIN__/style/animate.css" rel="stylesheet">
+    
+</head>
+<body>
+	<!-- 头部 -->
+    <{include file="public/top" /}>
+	<!-- /头部 -->
+	
+	<div class="main-container container-fluid">
+		<div class="page-container">
+			            <!-- Page Sidebar -->
+                        <{include file="public/left" /}>
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                                        <li>
+                        <a href="<{:url('index/index')}>">首页</a>
+                    </li>
+                                        <li class="active">删除列表</li>
+                                        </ul>
+                </div>
+                <!-- /Page Breadcrumb -->
+
+                <!-- Page Body -->
+                <div class="page-body">
+                    
+</button>
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="widget">
+            <div class="widget-body">
+                <div class="flip-scroll">
+                    <table class="table table-bordered table-hover">
+                        <thead class="">
+                            <tr>
+                                <th class="text-center">ID</th>
+                                <th class="text-center">用户名称</th>
+                                <th class="text-center">邮箱</th>
+                                <th class="text-center">创建时间</th>
+                                <th class="text-center">删除时间</th>
+                                <th class="text-center">最后登录IP</th>
+                                <th class="text-center">最后登录时间</th>
+                                <th class="text-center">登录次数</th>
+                                <th class="text-center">状态</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <{foreach $result as $vo}>
+                            <tr>
+                                <td align="center"><{$vo.id}></td>
+                                <td align="center"><{$vo.username}></td>
+                                <td align="center"><{$vo.email}></td>
+                                <td align="center"><{$vo.create_time}></td>
+                                <td align="center"><{:date('Y-m-d H:i:s',$vo.delete_time)}></td>
+                                <td align="center"><{$vo.last_login_ip}></td>
+                                <td align="center"><{:date('Y-m-d H:i:s',$vo.last_login_time)}></td>
+                                <td align="center"><{$vo.login_times}></td>
+                                <td align="center"><a href="javascript:void()" onclick="status(<{$vo.id}>)" id="status<{$vo.id}>"><{$vo.status}></a></td>
+                                <td align="center">
+                                    <a href="#" onClick="warning('删除后不可撤', 'thorough_delete/id/<{$vo.id}>')" class="btn btn-danger btn-sm shiny">
+                                        <i class="fa fa-trash-o"></i> 彻底删除
+                                    </a>
+                                </td>
+                            </tr>
+                            <{/foreach}>                    
+                        </tbody>
+                    </table>
+                    <span calss="page-body"><{$result->render()}></span>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+		</div>	
+	</div>
+
+	    <!--Basic Scripts-->
+    <script src="__ADMIN__/style/jquery_002.js"></script>
+    <script src="__ADMIN__/style/bootstrap.js"></script>
+    <script src="__ADMIN__/style/jquery.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__ADMIN__/style/beyond.js"></script>
+    <script>
+        function status(id){
+            var XMLhttp = new XMLHttpRequest();
+            var i;
+            XMLhttp.onreadystatechange=function()
+            {
+                if (XMLhttp.readyState==4 && XMLhttp.status==200)
+                {
+                    document.getElementById("status"+id+"").innerHTML=XMLhttp.responseText;
+                    console.log(XMLhttp.responseText);
+                    console.log(id);
+                }
+            }
+            XMLhttp.open('get',"status/id/"+id+"/",true);
+            XMLhttp.send();
+        }
+    </script>
+
+
+</body>
+</html>

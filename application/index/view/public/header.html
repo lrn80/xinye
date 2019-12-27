@@ -1,0 +1,75 @@
+<div id="head">
+    <div class="tbCenter">
+        <h3 class="logo"></h3>
+        <ul class="guide">
+            <li><a href="<{:url('index/index')}>">首页</a></li>
+            <li class="interval"></li>
+            <li class="short"><a href="<{:url('photo/photo')}>">案例欣赏</a></li>
+            <li class="interval"></li>
+            <li><a href="<{:url('comment/comment')}>">联系与反馈</a></li>
+        </ul>
+        <{if condition = "!ifUsernameID()"}>
+        <!-- 未登录前的状态 -->
+        <div class="user_before">
+            <i class="iconfont icon-icontouxiang"></i> <a href="javascript:;"> 登录</a>
+            <a href="javascript:;"> 注册</a>
+        </div>
+        <!-- 登录后的状态 -->
+        <{else}>
+        <div class="user_after" id="downBlock">
+            <i class="iconfont icon-icontouxiang"></i>
+
+            <a><{:getUsername()}></a>
+
+            <div class="select">
+                <ul>
+                    <li><a href="<{:url('sign/index')}>">签到</a></li>
+                    <li><a href="<{:url('user/logout')}>">退出账号</a></li>
+                </ul>
+            </div>
+        </div>
+        <{/if}>
+    </div>
+</div>
+<div class="user hide">
+    <div class="user-list">
+        <form id="form1" action="<{:url('user/login')}>" method="post">
+            <h3>登陆</h3>
+            <ul>
+                <li><label>用户名</label><input type="text" name="username" id="username" placeholder="昵称或邮箱" /></li>
+                <li><label>密码</label><input type="password" name="password" id="pass" placeholder="6-20位密码" /></li>
+                <li><label>验证码</label><input class="half" type="text" name="captcha"/>
+                    <img class="captcha" src="<{:url('index/index/captcha')}> " onClick="this.src='<{:url(\'index/index/captcha\')}>?time='+Math.random()" alt="">
+                </li>
+                <div class="buttons">
+                    <a class="onbutton"><button type="submit" id="onsubmit">登录</button></a>
+                    <a class="openbutton"><button type="button" id="getform2">注册</button></a>
+                </div>
+            </ul>
+        </form>
+        <form class="hide" id="form2" action="<{:url('user/register')}>" method="post">
+            <h3>注册</h3>
+            <ul>
+                <li><label>用户名</label><input type="text" name="username" class="getusername" />
+                    <div class='tips'>用户名长度在10个字符以内</div>
+                </li>
+                <li><label>邮箱</label><input type="text" name="email" class="getEmail" />
+                    <div class='tips'>请检查邮箱格式</div>
+                </li>
+
+                <li><label>密码</label><input type="password" name="password" class="getpass" />
+                    <div class='tips'>请输入6-20位密码(必须有大小写及数字)</div>
+                </li>
+                <li><label>验证码</label><input class="half" type="text" name="validate"/>
+                    <div class='tips'>请再次输入验证码</div>
+                    <a href="javascript:;" onclick="return false" class="getbutton1"><input type="button" value="邮箱验证"></a>
+                </li>
+                <div class="buttons">
+                    <!--<a href="javascript:;" class="getbutton"><button type="button" id="getsubmit">提交注册</button></a>-->
+                    <a href="javascript:;" class="getbutton"><button type="submit" id="submit">提交注册</button></a>
+                </div>
+            </ul>
+        </form>
+    </div>
+
+</div>

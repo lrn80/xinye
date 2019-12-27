@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新叶网络案例欣赏</title>
+    <link rel="stylesheet" href="__STATIC__/index/css/show.css" type="text/css" />
+    <link rel="stylesheet" href="__STATIC__/index/css/indexTB.css" type="text/css" />
+    <link rel="stylesheet" href="__STATIC__/index/css/signIn.css" type="text/css" />
+    <link rel="stylesheet" href="__STATIC__/index/fonts/font_1090203_vwb70lzetrn/iconfont.css" type="text/css" />
+</head>
+
+<body>
+    <{include file="public/header"}>
+
+    <div class="lastShow">
+        <div class="showPic">
+            <!--侧边栏-->
+            <div class="left-year">
+                <nav>
+                    <ul class="mcd-menu">
+                        <li class="showA">
+                            <a href="javascript:;">
+                                <strong>往年案例欣赏</strong>
+                                <small>Works Show</small>
+                            </a>
+                        </li>
+
+                        <li class="leftNav">
+                            <a href="javascript:;" class="active" onclick="test(this)" id=<?php echo $year[0]?>>
+                                <strong  class="stron"> <?php echo $year[0]?> </strong>
+                                <small>True blue will never stain</small>
+                            </a>
+                        </li>
+
+                        <li class="leftNav">
+                            <a href="javascript:;" onclick="test(this)" id=<?php echo $year[1]?> >
+                                <strong><?php echo $year[1]?></strong>
+                                <small>sweet home</small>
+                            </a>
+                        </li>
+                        <li class="leftNav">
+                            <a href="javascript:;" onclick="test(this)" id=<?php echo $year[2]?> >
+                                <strong><?php echo $year[2]?></strong >
+                                <small>Practice makes perfect</small>
+                            </a>
+                        </li>
+                        <li class="leftNav">
+                            <a href="javascript:;" onclick="test(this)" id=<?php echo $year[3]?>>
+                                <strong><?php echo $year[3]?></strong>
+                                <small>Diamond cut diamond</small>
+                            </a>
+                        </li>
+                        <li class="leftNav">
+                            <a href="javascript:;" onclick="test(this)" id=<?php echo $year[4]?>>
+                                <strong><?php echo $year[4]?></strong>
+                                <small>Teach fish to swim</small>
+                            </a>
+                        </li>
+
+                        <li class="leftNav">
+                            <a href="javascript:;">
+                                <strong><?php echo $year[5]?>--<?php echo end($year)?></strong>
+                                <small>Great minds think alike</small>
+                            </a>
+                            <ul>
+                                <{volist name='year' id='year' offset="5" }>
+                                    <li><a href="javascript:;" onclick="test(this)" id=<{$year}>><{$year}></a></li>
+                                    <{/volist}>
+                            </ul>
+                        </li>
+                        <li class="search">
+                            <a href="javascript:;">
+                                <input type="text" placeholder="搜索项目...">
+                                <button type="button" alt=""><i class="iconfont icon-sousuo"></i></button>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="topPic">
+                <div class="tP pic">
+                    <!--   <img src="./imgs/QQ20180507-0.jpg" alt="">
+                      <img class="hide" src="./imgs/QQ20180515-3.jpg" alt="">-->
+                </div>
+                <div class="tP pic">
+                    <!--  <img src="./imgs/QQ20180515-0.jpg" alt="">
+                      <img class="hide" src="./imgs/QQ20181213-8.jpg" alt="">-->
+                </div>
+                <div class="tP pic">
+                    <!--  <img src="./imgs/QQ20180515-1.jpg" alt="">
+                    <img class="hide" src="./imgs/QQ20180515-4.jpg" alt="">-->
+                </div>
+            </div>
+            <div class="bottomPic">
+                <div class="bP  pic">
+                    <!--     <img src="imgs/img1.jpg" alt="">
+                     <img class="hide" src="./imgs/IMG_0078.jpg" alt="">-->
+                </div>
+                <div class="bP  pic">
+                    <!--     <img src="./imgs/2018-08-25 100513.jpg" alt="">
+                     <img class="hide" src="./imgs/2018-08-25 153005(1).jpg" alt="">-->
+                </div>
+            </div>
+
+            <a href="javascript:;" class="arrow arrow_left"> </a>
+            <a href="javascript:;" class="arrow arrow_right"> </a>
+            <div id="pagination">
+                <!-- 后面会在JS中动态追加 ，此处为了，实现前端效果，所以注释  -->
+                <!-- <a class="banBtn pageItem" id="prevBtn">&lt;</a>
+                <a class="active2 pageItem" id="first">1</a>
+                <a href="#" class="pageItem">2</a>
+                <a href="#" class="pageItem">3</a>
+                <a href="#" class="pageItem">4</a>
+                <span class="over">...</span>
+                <a href="#" class="pageItem" id="last">10</a>
+                <a href="#" class="pageItem" id="nextBtn">&gt;</a> -->
+
+            </div>
+        </div>
+    </div>
+    <{include file="public/footer"}>
+    <!-- 版权部分 -->
+    <div id="copyright">copyright©Xinye|版权所有©新叶工作室</div>
+    <script type="text/javascript" src="__STATIC__/index/js/show.js"></script>
+    <script type="text/javascript" src="__STATIC__/index/js/login.js"></script>
+    <script src="__STATIC__/index/js/downblock.js"> </script>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>童老师ThinkPHP交流群：484519446</title>
+
+    <meta name="description" content="Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Basic Styles-->
+    <link href="__ADMIN__/style/bootstrap.css" rel="stylesheet">
+    <link href="__ADMIN__/style/font-awesome.css" rel="stylesheet">
+    <link href="__ADMIN__/style/weather-icons.css" rel="stylesheet">
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="__ADMIN__/style/beyond.css" rel="stylesheet" type="text/css">
+    <link href="__ADMIN__/style/demo.css" rel="stylesheet">
+    <link href="__ADMIN__/style/typicons.css" rel="stylesheet">
+    <link href="__ADMIN__/style/animate.css" rel="stylesheet">
+    <script src="__ADMIN__/ueditor/ueditor.config.js"></script>
+    <script src="__ADMIN__/ueditor/ueditor.all.min.js"></script>
+    <script src="__ADMIN__/ueditor/lang/zh-cn/zh-cn.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <{include file="public/top" /}>
+
+    <!-- /头部 -->
+
+    <div class="main-container container-fluid">
+        <div class="page-container">
+
+
+
+            <!-- Page Sidebar -->
+            <{include file="public/left" /}>
+
+
+
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="#">系统</a>
+                        </li>
+                        <li>
+                            <a href="<{:url('lis')}>">案例图片</a>
+                        </li>
+                        <li class="active">添加图片</li>
+                    </ul>
+                </div>
+                <!-- /Page Breadcrumb -->
+
+                <!-- Page Body -->
+                <div class="page-body">
+
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="widget">
+                                <div class="widget-header bordered-bottom bordered-blue">
+                                    <span class="widget-caption">新增图片</span>
+                                </div>
+                                <div class="widget-body">
+                                    <div id="horizontal-form">
+                                        <form class="form-horizontal" role="form" action="" method="post"  enctype="multipart/form-data">
+                                            
+                                            <div class="form-group">
+                                                <label for="username" class="col-sm-2 control-label no-padding-right">图片关键字</label>
+                                                <div class="col-sm-6">
+                                                    <input class="form-control" id="username" placeholder="" name="keywords"
+                                                        required="" type="text">
+                                                </div>
+                                                <p class="help-block col-sm-4 red">* 必填</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="username" class="col-sm-2 control-label no-padding-right">发布时间</label>
+                                                <div class="col-sm-6">
+                                                    <select  name="photime1">
+                                                        <option  selected="selected">==请选择年份==</option>
+                                                        <option value ="2019">2019年</option>
+                                                        <option value ="2018">2018年</option>
+                                                        <option value ="2017">2017年</option>
+                                                        <option value="2016">2016年</option>
+                                                        <option value="2015">2015年</option>
+                                                        <option value ="2014">2014年</option>
+                                                        <option value ="2013">2013年</option>
+                                                        <option value="2012">2012年</option>
+                                                        <option value="2011">2011年</option>
+                                                        <option value="2010">2010年</option>
+                                                        <option value="2009">2009年</option>
+                                                        <option value="2008">2008年</option>
+                                                        
+                                                    </select>
+                                                    <select  name="photime2">
+                                                        <option  selected="selected">==请选择月份==</option>
+                                                        <option value ="12">12月</option>
+                                                        <option value ="11">11月</option>
+                                                        <option value="10">10月</option>
+                                                        <option value="9">9月</option>
+                                                        <option value ="8">8月</option>
+                                                        <option value ="7">7月</option>
+                                                        <option value="6">6月</option>
+                                                        <option value="5">5月</option>
+                                                        <option value="4">4月</option>
+                                                        <option value ="3">3月</option>
+                                                        <option value="2">2月</option>
+                                                        <option value="1">1月</option> 
+                                                    </select>
+                                                    <select  name="photime3">
+                                                        <option  selected="selected">==请选择日期==</option>
+                                                        <option value ="1">1</option>
+                                                        <option value ="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value ="5">5</option>
+                                                        <option value ="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value ="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value ="13">13</option>
+                                                        <option value ="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value ="17">17</option>
+                                                        <option value ="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value ="22">22</option>
+                                                        <option value="23">23</option>
+                                                        <option value="24">24</option>
+                                                        <option value="25">25</option>
+                                                        <option value="26">26</option>
+                                                        <option value="27">27</option>
+                                                        <option value ="28">28</option>
+                                                        <option value="29">29</option>
+                                                        <option value="30">30</option>
+                                                        <option value="31">31</option>
+                                                    </select>
+                                                </div>
+                                                <p class="help-block col-sm-4 red">* 必填</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label no-padding-right">案例图片</label>
+                                                <div class="col-sm-6">
+                                                    <input  placeholder="" name="photo" 
+                                                        type="file">
+                                                </div>
+                                                <p class="help-block col-sm-4 red"></p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <button type="submit" class="btn btn-default">保存信息</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+    </div>
+
+    <!--Basic Scripts-->
+    <script src="__ADMIN__/style/jquery_002.js"></script>
+    <script src="__ADMIN__/style/bootstrap.js"></script>
+    <script src="__ADMIN__/style/jquery.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__ADMIN__/style/beyond.js"></script>
+    <script type="text/javascript">
+        UE.getEditor('content',{initialFrameWidth:800,initialFrameHeight:400,});
+    </script>
+    <script>
+
+    </script>
+
+
+</body>
+
+</html>
