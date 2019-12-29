@@ -61,12 +61,4 @@ class AuthRule extends Model
         return $arrStr;
     }
 
-
-
-
-
-
-
-
-
 }

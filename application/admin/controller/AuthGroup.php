@@ -25,7 +25,7 @@ class AuthGroup extends Common
             return;
         }
         $authRule=new \app\admin\model\AuthRule();
-        $authRuleRes=$authRule->authRuleTree();
+        $authRuleRes=$authRule->authRuleTree();  //用于显示出所有的权限信息
         $this->assign('authRuleRes',$authRuleRes);
         return view();
     }
