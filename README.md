@@ -19,7 +19,7 @@ auth_group（用户组表） 1 超级管理员 2 普通管理员 3 文章发布�
 auth_rule （规则表）   1 article/add 2 article/edit 3 article/del 控制器名/方法名
 ![](http://xy.lrnjy.club/images/7-thinkphp5-auth2-2.png)
 auth_group_access（用于管理员表和用户组表相连）uid 1 group_id 1  
-![](http://xy.lrnjy.club/images/7-thinkphp5-auth2-3.png)
+![](http://xy.lrnjy.club/images/7-thinkphp5-auth2-3.png)  
 **建表语句参考上边链接**
 #### 实现的核心函数  
 - **list**页面利用无限级分类对内容进行展示实现如下效果：  
