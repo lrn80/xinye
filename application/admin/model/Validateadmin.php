@@ -36,8 +36,6 @@ public function username_edit(){
               if($username1==""){
                 return "*用户名不能为空！";
                }
-             
-             
                 if(!preg_match($res, $username1))
                 {
                   return  '*长度为5-15位（字母、数字），不能含有特殊符号';
