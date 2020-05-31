@@ -5,10 +5,11 @@
 ### 管理员的登录
 登陆界面主要是对管理员的账号密码以及验证码进行验证  
 具体内容如下图：
-![](http://xy.lrnjy.club/images/xinye-1.png)
+![](http://xy.liruoning.cn/images/xinye-1.png)
+
 ### 管理员列表的增删改  
 在add和edit界面利用onblur事件,触发Ajax请求后端相应的方法来效验填写的内容是否符合规则。当离开框时就给予相应的提示。
-![](http://xy.lrnjy.club/images/xinye-2.png)
+![](http://xy.liruoning.cn/images/xinye-2.png)
 ### 管理员Auth权限
 #### 引入Auth包  
 由于thinkphp3.2是自带Auth权限认证包的，到了thinkphp5便去除掉了，所以把3.2的auth权限类做一下修改应用的thinkphp5上边。https://github.com/lrn80/xinye/blob/master/application/admin/controller/Auth.php  
